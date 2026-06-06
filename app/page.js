@@ -498,8 +498,8 @@ export default function App() {
   const [selectedWorkout, setSelectedWorkout] = useState(null);
   const [completedWorkouts, setCompletedWorkouts] = useState({});
   const [userProfiles, setUserProfiles] = useState({
-    user1: { name: 'Du', races: ['midnattsloppet', 'vansbro', 'lidingo', 'vasaloppet', 'vatternrundan'], setup: true },
-    user2: { name: 'Kompisen', races: ['vansbro', 'lidingo', 'vasaloppet', 'vatternrundan'], setup: false }
+    user1: { name: 'Anton', races: ['midnattsloppet', 'vansbro', 'lidingo', 'vasaloppet', 'vatternrundan'], setup: true },
+    user2: { name: 'Peter', races: ['vansbro', 'lidingo', 'vasaloppet', 'vatternrundan'], setup: false }
   });
 
   useEffect(() => {
@@ -564,7 +564,7 @@ export default function App() {
                     fontFamily: 'Barlow, sans-serif'
                   }}
                 >
-                  {userProfiles[uid]?.name || (uid === 'user1' ? 'Du' : 'Kompisen')}
+                  {userProfiles[uid]?.name || (uid === 'user1' ? 'Anton' : 'Peter')}
                 </button>
               ))}
             </div>
@@ -595,7 +595,7 @@ export default function App() {
             {['user1', 'user2'].map(uid => (
               <button key={uid} className={`nav-user-tab ${currentUser === uid ? 'active' : ''}`}
                 onClick={() => { setCurrentUser(uid); setNavOpen(false); }}>
-                {userProfiles[uid]?.name || (uid === 'user1' ? 'Du' : 'Kompisen')}
+                {userProfiles[uid]?.name || (uid === 'user1' ? 'Anton' : 'Peter')}
               </button>
             ))}
           </div>
