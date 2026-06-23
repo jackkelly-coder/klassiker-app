@@ -79,14 +79,14 @@ export const races = [
 export const users = {
   user1: {
     id: "user1",
-    name: "Du",
+    name: "Anton",
     avatar: "🏃",
     races: ["midnattsloppet", "vansbro", "lidingo", "vasaloppet", "vatternrundan"],
     setup: true
   },
   user2: {
     id: "user2",
-    name: "Kompisen",
+    name: "Peter",
     avatar: "💪",
     races: ["vansbro", "lidingo", "vasaloppet", "vatternrundan"],
     setup: false
@@ -103,10 +103,10 @@ export const workoutTypes = {
   rest: { label: "Vila", color: "#6c757d", icon: "😴" }
 };
 
-// Träningsplan fas 1: Nu → Midnattsloppet (15 aug 2026)
-// Fokus: Löpning + rörlighet + lätt gym
 export const trainingPlan = {
-  // Vecka 1 (9–15 juni 2026)
+
+  // ─── FAS 1: GRUNDBYGGE ───────────────────────────────────────────────────────
+  // Vecka 24 (9–15 jun 2026)
   "2026-W24": {
     monday: {
       type: "running",
@@ -169,10 +169,12 @@ export const trainingPlan = {
       }
     }
   },
+
+  // Vecka 25 (16–22 jun 2026)
   "2026-W25": {
     tuesday: {
       type: "running",
-      title: "Intervallass",
+      title: "Intervallpass",
       duration: 45,
       detail: {
         distance: 6,
@@ -209,7 +211,7 @@ export const trainingPlan = {
       duration: 40,
       detail: {
         passType: "Rörlighet & återhämtning",
-        description: "Yoga-inspirerat rörlighetspass. Fokus på höfter, hamstrings och rygg – vanliga stela zoner för gymmare.",
+        description: "Yoga-inspirerat rörlighetspass. Fokus på höfter, hamstrings och rygg.",
         exercises: [
           { name: "Nedåtvänd hund", sets: 1, reps: "60 sek", note: "Andas djupt" },
           { name: "Lunge med rotation", sets: 1, reps: "8 per sida", note: "" },
@@ -236,6 +238,8 @@ export const trainingPlan = {
       }
     }
   },
+
+  // Vecka 26 (23–29 jun 2026)
   "2026-W26": {
     monday: {
       type: "running",
@@ -253,7 +257,7 @@ export const trainingPlan = {
     },
     wednesday: {
       type: "gym",
-      title: "Gympass – Underkropp",
+      title: "Gympass – Underkropp & Core",
       duration: 55,
       detail: {
         passType: "Styrka",
@@ -263,7 +267,7 @@ export const trainingPlan = {
           { name: "Sumo knäböj", sets: 3, reps: "12", note: "" },
           { name: "Step-up på bänk", sets: 3, reps: "10 per ben", note: "" },
           { name: "Enbensdödlyft", sets: 3, reps: "10 per ben", note: "Balans och stabilitet" },
-          { name: "Benpressmaskin", sets: 3, reps: "15", note: "Ljust vikter" },
+          { name: "Benpressmaskin", sets: 3, reps: "15", note: "Lätta vikter" },
           { name: "Planka sidoplanka", sets: 3, reps: "30 sek per sida", note: "" }
         ]
       }
@@ -284,7 +288,7 @@ export const trainingPlan = {
     },
     sunday: {
       type: "running",
-      title: "Långpass",
+      title: "Långpass – Tävlingsdistansen!",
       duration: 90,
       detail: {
         distance: 10,
@@ -294,6 +298,433 @@ export const trainingPlan = {
         description: "Tävlingsdistansen! Springa 10 km utan stress. Bekräfta att du klarar sträckan.",
         warmup: "5 min promenad",
         cooldown: "Lång stretching + eventuellt isbad"
+      }
+    }
+  },
+
+  // ─── FAS 2: VOLYMBYGGE ────────────────────────────────────────────────────────
+  // Vecka 27 (30 jun–6 jul 2026)
+  "2026-W27": {
+    tuesday: {
+      type: "running",
+      title: "Intervallpass – 800m",
+      duration: 50,
+      detail: {
+        distance: 7,
+        pace: "Hårt på intervallerna, lugnt i vila",
+        zone: "Pulszon 4–5 på intervaller",
+        passType: "Intervallträning",
+        description: "Längre intervaller den här veckan. Bygg upp syreupptagning och löpekonomi.",
+        warmup: "10 min lätt jogg",
+        cooldown: "10 min lätt jogg",
+        intervals: "5 x 800m med 2 min joggvila"
+      }
+    },
+    thursday: {
+      type: "gym",
+      title: "Gympass – Underkropp & Core",
+      duration: 55,
+      detail: {
+        passType: "Styrka",
+        description: "1 gympass per vecka framöver – fokus på underkropp och core som stödjer löpningen.",
+        exercises: [
+          { name: "Knäböj", sets: 4, reps: "10", note: "Lite tyngre än förut" },
+          { name: "Rumänsk marklyft", sets: 3, reps: "10", note: "Kontrollerat" },
+          { name: "Utfall med hantlar", sets: 3, reps: "10 per ben", note: "" },
+          { name: "Höftlyft (glute bridge)", sets: 3, reps: "15", note: "Håll uppe 2 sek" },
+          { name: "Vadpress stående", sets: 3, reps: "20", note: "Förebygger skador" },
+          { name: "Planka", sets: 3, reps: "60 sek", note: "" },
+          { name: "Rysk twist med medicinboll", sets: 3, reps: "15 per sida", note: "" }
+        ]
+      }
+    },
+    saturday: {
+      type: "mobility",
+      title: "Rörlighet & lätt cykling",
+      duration: 50,
+      detail: {
+        passType: "Rörlighet & aktiv återhämtning",
+        description: "20 min lätt cykling följt av 30 min rörlighet. Perfekt helgpass.",
+        exercises: [
+          { name: "Cykling lugnt tempo", sets: 1, reps: "20 min", note: "Pulszon 1–2" },
+          { name: "Höftsträck liggande", sets: 1, reps: "60 sek per sida", note: "" },
+          { name: "Hamstringsträck", sets: 1, reps: "60 sek per sida", note: "" },
+          { name: "Vadstretching mot vägg", sets: 1, reps: "45 sek per sida", note: "Viktig för löpare" },
+          { name: "Bröstkorg öppnare", sets: 1, reps: "10", note: "" },
+          { name: "Höftvippa", sets: 1, reps: "10 per sida", note: "" }
+        ]
+      }
+    },
+    sunday: {
+      type: "running",
+      title: "Långpass",
+      duration: 85,
+      detail: {
+        distance: 10,
+        pace: "Lugnt och kontrollerat hela vägen",
+        zone: "Pulszon 2",
+        passType: "Långdistans",
+        description: "Håll 10 km igen men känn att det sitter bättre än förra gången. Fokus på löpstil.",
+        warmup: "5 min promenad",
+        cooldown: "Stretching + skumroller"
+      }
+    }
+  },
+
+  // Vecka 28 (7–13 jul 2026)
+  "2026-W28": {
+    monday: {
+      type: "running",
+      title: "Tempopass – tröskelnivå",
+      duration: 50,
+      detail: {
+        distance: 7,
+        pace: "Ansträngande men kontrollerbart – precis under tävlingstempo",
+        zone: "Pulszon 3–4",
+        passType: "Tröskelpass",
+        description: "20 min i tröskeltempo (precis under den gräns du kan hålla i 1 tim). Bygger löpfart.",
+        warmup: "10 min lätt jogg",
+        cooldown: "10 min lätt jogg + stretching",
+        intervals: "20 min kontinuerligt tröskeltempo"
+      }
+    },
+    wednesday: {
+      type: "gym",
+      title: "Gympass – Underkropp & Core",
+      duration: 55,
+      detail: {
+        passType: "Styrka",
+        description: "Fokus på enbensstyrka och rörlighet – viktigt för löpstabilitet.",
+        exercises: [
+          { name: "Enbensknäböj (pistol assist)", sets: 3, reps: "8 per ben", note: "Håll i rack om det behövs" },
+          { name: "Steg-upp med hantlar", sets: 3, reps: "10 per ben", note: "Kontrollerat nedåt" },
+          { name: "Sumo marklyft", sets: 3, reps: "10", note: "Medelvikter" },
+          { name: "Höftabduktion maskin", sets: 3, reps: "15", note: "Förebygger löparknä" },
+          { name: "Vadpress en fot i taget", sets: 3, reps: "15 per fot", note: "" },
+          { name: "Hängande benlyft", sets: 3, reps: "12", note: "Core" },
+          { name: "Pallof press", sets: 3, reps: "10 per sida", note: "Rotationsstabilitet" }
+        ]
+      }
+    },
+    friday: {
+      type: "running",
+      title: "Fartlek",
+      duration: 45,
+      detail: {
+        distance: 7,
+        pace: "Varierar – lugnt med korta explosiva spurtar",
+        zone: "Blandad pulszon",
+        passType: "Fartlek",
+        description: "Fri intervallträning i naturen. Spring lugnt och lägg in 8–10 spurter på 20–30 sek när det känns rätt.",
+        warmup: "10 min lugnt",
+        cooldown: "10 min lugnt + stretching"
+      }
+    },
+    sunday: {
+      type: "running",
+      title: "Långpass",
+      duration: 90,
+      detail: {
+        distance: 11,
+        pace: "Lugnt – prata-tempo hela vägen",
+        zone: "Pulszon 2",
+        passType: "Långdistans",
+        description: "Pushar lite längre än tävlingsdistansen för att bygga marginal. Ta det lugnt!",
+        warmup: "5 min promenad",
+        cooldown: "Lång stretching"
+      }
+    }
+  },
+
+  // ─── FAS 3: TOPPNING ──────────────────────────────────────────────────────────
+  // Vecka 29 (14–20 jul 2026)
+  "2026-W29": {
+    tuesday: {
+      type: "running",
+      title: "Intervallpass – 1000m",
+      duration: 55,
+      detail: {
+        distance: 8,
+        pace: "Hårt på intervallerna – tävlingsfart eller lite snabbare",
+        zone: "Pulszon 4–5",
+        passType: "Intervallträning",
+        description: "Kilometer-intervaller bygger din tävlingsfart. Håll jämnt tempo på varje.",
+        warmup: "10 min lätt jogg",
+        cooldown: "10 min lätt jogg",
+        intervals: "5 x 1000m med 90 sek vila"
+      }
+    },
+    thursday: {
+      type: "gym",
+      title: "Gympass – Underkropp & Core",
+      duration: 50,
+      detail: {
+        passType: "Styrka",
+        description: "Lite lättare vecka i gymmet – fokus på kvalitet inte kvantitet.",
+        exercises: [
+          { name: "Knäböj", sets: 3, reps: "10", note: "Medelvikt" },
+          { name: "Utfall gående", sets: 3, reps: "12 per ben", note: "Håll tempo" },
+          { name: "Höftlyft med band", sets: 3, reps: "20", note: "Aktivera gluteus" },
+          { name: "Enbensdödlyft", sets: 3, reps: "10 per ben", note: "Balans" },
+          { name: "Planka", sets: 3, reps: "60 sek", note: "" },
+          { name: "Vadpress", sets: 3, reps: "20", note: "" }
+        ]
+      }
+    },
+    saturday: {
+      type: "mobility",
+      title: "Rörlighetspass",
+      duration: 40,
+      detail: {
+        passType: "Rörlighet & återhämtning",
+        description: "Viktigt rörlighetspass mitt i toppningsfasen. Låt kroppen återhämta sig.",
+        exercises: [
+          { name: "Nedåtvänd hund", sets: 1, reps: "60 sek", note: "" },
+          { name: "Pigeon pose", sets: 1, reps: "90 sek per sida", note: "Djup höftsträck" },
+          { name: "Hamstringsträck liggande", sets: 1, reps: "60 sek per sida", note: "" },
+          { name: "Ryggrotation liggande", sets: 1, reps: "10 per sida", note: "" },
+          { name: "Vadstretching", sets: 1, reps: "60 sek per sida", note: "" },
+          { name: "Nackrullningar", sets: 1, reps: "10 vardera håll", note: "" }
+        ]
+      }
+    },
+    sunday: {
+      type: "running",
+      title: "Långpass – Toppning",
+      duration: 95,
+      detail: {
+        distance: 12,
+        pace: "Lugnt – testa att hålla jämt tempo hela vägen",
+        zone: "Pulszon 2",
+        passType: "Långdistans",
+        description: "Det längsta passet i träningsplanen. Går detta bra är du redo för Midnattsloppet!",
+        warmup: "5 min promenad",
+        cooldown: "Lång stretching + skumroller"
+      }
+    }
+  },
+
+  // Vecka 30 (21–27 jul 2026)
+  "2026-W30": {
+    monday: {
+      type: "running",
+      title: "Tröskelpass",
+      duration: 50,
+      detail: {
+        distance: 7,
+        pace: "Hårt men kontrollerbart – precis under röd linje",
+        zone: "Pulszon 3–4",
+        passType: "Tröskelpass",
+        description: "2 x 10 min tröskeltempo med 3 min joggvila. Simulerar tävlingskänslan.",
+        warmup: "10 min lätt jogg",
+        cooldown: "10 min lätt jogg",
+        intervals: "2 x 10 min tröskeltempo, 3 min joggvila"
+      }
+    },
+    wednesday: {
+      type: "gym",
+      title: "Gympass – Underkropp & Core",
+      duration: 50,
+      detail: {
+        passType: "Styrka",
+        description: "Sista tunga gympasset innan nedtrappning. Kör på med bra teknik.",
+        exercises: [
+          { name: "Knäböj", sets: 4, reps: "8", note: "Tyngre, explosivt uppåt" },
+          { name: "Rumänsk marklyft", sets: 3, reps: "10", note: "" },
+          { name: "Bulgariska utfall", sets: 3, reps: "8 per ben", note: "Bra rörlighetsövning" },
+          { name: "Höftlyft", sets: 3, reps: "15", note: "" },
+          { name: "Planka med benlyft", sets: 3, reps: "10 per sida", note: "" },
+          { name: "Vadpress", sets: 3, reps: "20", note: "" }
+        ]
+      }
+    },
+    friday: {
+      type: "running",
+      title: "Lätt löpning",
+      duration: 35,
+      detail: {
+        distance: 5,
+        pace: "Mycket lugnt",
+        zone: "Pulszon 1–2",
+        passType: "Återhämtning",
+        description: "Lätt aktiveringsjogg. Håll benen i rörelse inför veckoslutet.",
+        warmup: "Ingen",
+        cooldown: "Stretching"
+      }
+    },
+    sunday: {
+      type: "running",
+      title: "Mellanlångpass",
+      duration: 75,
+      detail: {
+        distance: 9,
+        pace: "Lugnt",
+        zone: "Pulszon 2",
+        passType: "Långdistans",
+        description: "Lite kortare än förra veckan – kroppen börjar trappa ned nu.",
+        warmup: "5 min promenad",
+        cooldown: "Stretching"
+      }
+    }
+  },
+
+  // ─── FAS 4: NEDTRAPPNING ─────────────────────────────────────────────────────
+  // Vecka 31 (28 jul–3 aug 2026)
+  "2026-W31": {
+    tuesday: {
+      type: "running",
+      title: "Intervallpass – kortare",
+      duration: 40,
+      detail: {
+        distance: 6,
+        pace: "Snabbt på intervallerna",
+        zone: "Pulszon 4–5",
+        passType: "Intervallträning",
+        description: "Kortare intervaller men håll farten uppe. Minska volymen, behåll intensiteten.",
+        warmup: "10 min lätt jogg",
+        cooldown: "10 min lätt jogg",
+        intervals: "6 x 400m med 90 sek vila"
+      }
+    },
+    thursday: {
+      type: "gym",
+      title: "Gympass – Underkropp & Core (lätt)",
+      duration: 45,
+      detail: {
+        passType: "Styrka – underhåll",
+        description: "Nedtrappning i gymmet. Lätta vikter, fokus på rörlighet och aktivering.",
+        exercises: [
+          { name: "Knäböj", sets: 3, reps: "10", note: "Lätta vikter" },
+          { name: "Utfall", sets: 3, reps: "10 per ben", note: "" },
+          { name: "Höftlyft", sets: 3, reps: "15", note: "" },
+          { name: "Planka", sets: 3, reps: "45 sek", note: "" },
+          { name: "Vadpress", sets: 3, reps: "15", note: "" }
+        ]
+      }
+    },
+    saturday: {
+      type: "mobility",
+      title: "Rörlighet & återhämtning",
+      duration: 40,
+      detail: {
+        passType: "Rörlighet",
+        description: "Prioritera återhämtning nu. Skumroller + yoga.",
+        exercises: [
+          { name: "Skumroller lår", sets: 1, reps: "2 min per sida", note: "" },
+          { name: "Skumroller vader", sets: 1, reps: "2 min per sida", note: "" },
+          { name: "Pigeon pose", sets: 1, reps: "90 sek per sida", note: "" },
+          { name: "Nedåtvänd hund", sets: 1, reps: "60 sek", note: "" },
+          { name: "Hamstringsträck", sets: 1, reps: "60 sek per sida", note: "" }
+        ]
+      }
+    },
+    sunday: {
+      type: "running",
+      title: "Mellanlångpass",
+      duration: 60,
+      detail: {
+        distance: 8,
+        pace: "Lugnt och kontrollerat",
+        zone: "Pulszon 2",
+        passType: "Långdistans",
+        description: "Håll formen uppe men minska volymen. Kroppen ska vara fräsch.",
+        warmup: "5 min promenad",
+        cooldown: "Stretching"
+      }
+    }
+  },
+
+  // Vecka 32 (4–10 aug 2026)
+  "2026-W32": {
+    monday: {
+      type: "running",
+      title: "Aktiveringsjogg",
+      duration: 30,
+      detail: {
+        distance: 4,
+        pace: "Mycket lugnt",
+        zone: "Pulszon 1–2",
+        passType: "Återhämtning",
+        description: "Lätt jogg för att hålla benen aktiva. Ingen press alls.",
+        warmup: "Ingen",
+        cooldown: "Stretching"
+      }
+    },
+    wednesday: {
+      type: "running",
+      title: "Tempopass – tävlingsfart",
+      duration: 35,
+      detail: {
+        distance: 5,
+        pace: "Tävlingstempo – känn att det sitter!",
+        zone: "Pulszon 3–4",
+        passType: "Tempopass",
+        description: "3 km i tävlingsfart. Sista hårda passet innan tävlingen. Kör det och känn självförtroendet!",
+        warmup: "10 min lätt jogg",
+        cooldown: "10 min lätt jogg",
+        intervals: "3 km i tävlingsfart"
+      }
+    },
+    friday: {
+      type: "mobility",
+      title: "Rörlighet & beredskap",
+      duration: 30,
+      detail: {
+        passType: "Rörlighet",
+        description: "Lätt rörlighetspass. Skumroller och stretching. Vila benen!",
+        exercises: [
+          { name: "Skumroller lår & vader", sets: 1, reps: "3 min totalt", note: "" },
+          { name: "Höftsträck", sets: 1, reps: "60 sek per sida", note: "" },
+          { name: "Hamstringsträck", sets: 1, reps: "60 sek per sida", note: "" },
+          { name: "Vadstretching", sets: 1, reps: "45 sek per sida", note: "" }
+        ]
+      }
+    }
+  },
+
+  // ─── TÄVLINGSVECKA ────────────────────────────────────────────────────────────
+  // Vecka 33 (11–17 aug 2026) – Midnattsloppet lördag 15 aug
+  "2026-W33": {
+    tuesday: {
+      type: "running",
+      title: "Mycket lätt jogg",
+      duration: 20,
+      detail: {
+        distance: 3,
+        pace: "Promenадtempo nästan",
+        zone: "Pulszon 1",
+        passType: "Aktivering",
+        description: "Håll benen lösa. Absolut inget hårt. Känn att benen är fräscha och pigga.",
+        warmup: "Ingen",
+        cooldown: "Lite stretching"
+      }
+    },
+    thursday: {
+      type: "running",
+      title: "Aktivering inför tävling",
+      duration: 20,
+      detail: {
+        distance: 3,
+        pace: "Lugnt med 3–4 korta spurtar",
+        zone: "Pulszon 1–2 + korta spurtar",
+        passType: "Tävlingsförberedelse",
+        description: "15 min lugnt jogg + 4 x 80m spurtar i tävlingstempo. Aktiverar benen utan att trötta ut dem.",
+        warmup: "Ingen",
+        cooldown: "Lätt stretching"
+      }
+    },
+    saturday: {
+      type: "running",
+      title: "🏆 MIDNATTSLOPPET",
+      duration: 75,
+      detail: {
+        distance: 10,
+        pace: "Tävlingstempo – ge allt!",
+        zone: "Pulszon 4–5",
+        passType: "Tävling",
+        description: "Det är tävlingsdag! Värm upp 15 min innan start. Starta lugnt de första 3 km, håll jämnt tempo till km 8, pusha de sista 2 km. Du är redo! 💪",
+        warmup: "15 min lätt jogg + stretching 45 min innan start",
+        cooldown: "Promenad + stretching efter målgång"
       }
     }
   }
